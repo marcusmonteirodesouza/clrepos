@@ -4,6 +4,8 @@ Clone GitHub repositories via Command Line
 
 ## Usage
 
+Set the `GITHUB_ACCESS_TOKEN` environment variable first.
+
 `clrepos --page=<number>`
 
 Shows the list of repos ordered by most stars from the page `number`.
