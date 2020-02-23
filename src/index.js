@@ -16,11 +16,11 @@ const octokit = new Octokit({
   auth: process.env.GITHUB_ACCESS_TOKEN
 });
 
-const getRepos = async (page, language = null, topic = null) => {
+const getRepos = async (page, language = null, topic = null, byHelpWanted=false) => {
   const q = `stars:>100 ${language ? `language:${language}` : ""} ${
     topic ? `topic:${topic}` : ""
   }`.trim();
-  const sort = "stars";
+  const sort = byHelpWanted ? "help-wanted-issues" : "forks";
   const order = "desc";
 
   const searchResult = await octokit.search.repos({
@@ -63,9 +63,10 @@ const cloneRepo = async repo => {
     )
     .option("--language <language>")
     .option("--topic <topic>")
+    .option("--by-help-wanted")
     .parse(process.argv);
 
-  const repos = await getRepos(program.page, program.language, program.topic);
+  const repos = await getRepos(program.page, program.language, program.topic, program.byHelpWanted);
   for (let repo of repos) {
     const onCancel = _prompt => {
       console.log("Canceled!");
