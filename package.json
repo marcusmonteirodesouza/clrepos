@@ -1,6 +1,6 @@
 {
   "name": "clrepos",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Clone GitHub repositories via Command Line",
   "main": "src/index.js",
   "scripts": {
