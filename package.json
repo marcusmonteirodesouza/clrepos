@@ -1,11 +1,14 @@
 {
   "name": "clrepos",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Clone GitHub repositories via Command Line",
   "main": "src/index.js",
   "scripts": {
     "format": "prettier --write ./**/*.{js,json,md}",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "clrepos": "src/index.js"
   },
   "keywords": [
     "git",
