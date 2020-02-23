@@ -11,10 +11,9 @@ const packageJson = require('../package.json');
 
 const originDir = __dirname;
 const codeDir = path.join(os.homedir(), 'code');
+mkdirp.sync(codeDir);
 
-const octokit = new Octokit({
-	auth: process.env.GITHUB_ACCESS_TOKEN
-});
+const octokit = new Octokit();
 
 const getRepos = async (
 	page,
