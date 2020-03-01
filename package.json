@@ -1,23 +1,32 @@
 {
   "name": "clrepos",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Clone GitHub repositories via Command Line",
-  "main": "src/index.js",
-  "scripts": {
-    "format": "prettier --write ./**/*.{json,md}",
-    "lint": "xo --fix",
-    "test": "npm run lint"
+  "author": "Marcus Vinicius Monteiro de Souza",
+  "license": "MIT",
+  "homepage": "https://github.com/marcusmonteirodesouza/clrepos",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcusmonteirodesouza/clrepos.git"
   },
-  "bin": {
-    "clrepos": "src/index.js"
+  "bugs": {
+    "email": "marcusmonteirodesouza@gmail.com",
+    "url": "https://github.com/marcusmonteirodesouza/clrepos/issues"
   },
   "keywords": [
     "git",
     "github",
     "cli"
   ],
-  "author": "Marcus Vinicius Monteiro de Souza",
-  "license": "MIT",
+  "main": "src/index.js",
+  "bin": {
+    "clrepos": "src/index.js"
+  },
+  "scripts": {
+    "format": "prettier --write ./**/*.{json,md}",
+    "lint": "xo --fix",
+    "test": "npm run lint"
+  },
   "dependencies": {
     "@octokit/rest": "^17.0.0",
     "commander": "^4.1.1",
