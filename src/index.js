@@ -48,7 +48,7 @@ const { getRepos, cloneRepo, isActive } = require("./lib");
           {
             type: "confirm",
             name: "willClone",
-            message: `Page ${page} - Do you want to clone this repo? ${repo.name}. ${repo.description}?`,
+            message: `Page ${page} - Do you want to clone this repo? ${repo.name}. ${repo.description} ${repo.html_url}?`,
           },
           { onCancel }
         );
