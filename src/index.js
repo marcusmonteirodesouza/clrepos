@@ -89,7 +89,7 @@ const cloneRepo = async repo => {
 				{
 					type: 'confirm',
 					name: 'willClone',
-					message: `Do you want to clone this repo? ${repo.name}. ${repo.description}?`
+					message: `Page ${page} - Do you want to clone this repo? ${repo.name}. ${repo.description}?`
 				},
 				{onCancel}
 			);
