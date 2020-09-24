@@ -1,6 +1,8 @@
 # CLRepos
 
-Clone GitHub repositories via Command Line
+Clone GitHub repositories via Command Line.
+
+Will only ask for repositories that were pushed_at 3 or less months ago.
 
 ## Usage
 
