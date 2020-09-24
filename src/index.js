@@ -57,9 +57,12 @@ const { getRepos, cloneRepo, isActive } = require("./lib");
           try {
             await cloneRepo(repo); // eslint-disable-line no-await-in-loop
           } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error("cloneRepo", error);
-            throw error;
+			if (error.message.includes('exists and is not an empty directory')) {
+				// eslint-disable-next-line no-console
+				console.warn(error.message)
+			} else {
+				throw error;
+			}
           }
         }
       }
