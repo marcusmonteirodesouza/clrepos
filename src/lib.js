@@ -1,10 +1,7 @@
 const os = require("os");
-
 const path = require("path");
-
 const git = require("nodegit");
 const mkdirp = require("mkdirp");
-
 const parseISO = require("date-fns/parseISO");
 const differenceInMonths = require("date-fns/differenceInMonths");
 

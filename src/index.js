@@ -6,7 +6,9 @@ const { Octokit } = require("@octokit/rest");
 const prompts = require("prompts");
 const packageJson = require("../package.json");
 const { getCodeDir } = require("./lib");
-const { getRepos, cloneRepo, isActive } = require("./lib")(async () => {
+const { getRepos, cloneRepo, isActive } = require("./lib");
+
+(async () => {
   const originDir = __dirname;
   mkdirp.sync(getCodeDir());
 
