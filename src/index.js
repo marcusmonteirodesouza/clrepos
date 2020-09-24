@@ -40,8 +40,8 @@ const { getRepos, cloneRepo, isActive } = require("./lib");
       const onCancel = () => {
         process.chdir(originDir);
         process.exit();
-      };
-
+	  };
+	  
       if (isActive(repo)) {
         // eslint-disable-next-line no-await-in-loop
         const response = await prompts(

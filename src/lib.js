@@ -30,30 +30,19 @@ const getRepos = async (
   });
 
   const { data } = searchResult;
-  const repos = data.items;
-  return repos.map((repo) => {
-    const { name } = repo;
-    const { description } = repo;
-    const cloneUrl = repo.clone_url;
 
-    return {
-      name,
-      description,
-      cloneUrl,
-      language: repo.language,
-    };
-  });
+  return data.items;
 };
 
 const cloneRepo = async (repo) => {
   const dir = path.join(getCodeDir(), repo.language);
   mkdirp.sync(dir);
   process.chdir(dir);
-  await git.Clone(repo.cloneUrl, repo.name); // eslint-disable-line new-cap
+  await git.Clone(repo.clone_url, repo.name); // eslint-disable-line new-cap
 };
 
 const isActive = (repo) => {
-  const pushedAt = parseISO(repo.pushedAt);
+  const pushedAt = parseISO(repo.pushed_at);
 
   if (differenceInMonths(new Date(), pushedAt) <= 3) {
     return true;

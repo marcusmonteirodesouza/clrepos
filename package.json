@@ -1,6 +1,6 @@
 {
   "name": "clrepos",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Clone GitHub repositories via Command Line",
   "author": "Marcus Vinicius Monteiro de Souza",
   "license": "MIT",

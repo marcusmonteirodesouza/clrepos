@@ -6,7 +6,7 @@ const { getCodeDir, isActive } = require("./lib");
 
 describe("clrepos", () => {
   const repo = {
-    pushedAt: "2011-01-26T19:06:43Z",
+    pushed_at: "2011-01-26T19:06:43Z",
   };
 
   describe("getCodeDir", () => {
@@ -26,14 +26,14 @@ describe("clrepos", () => {
       [0, 1, 2, 3].forEach((n) => {
         const pushedAt = subMonths(today, n).toISOString();
 
-        expect(isActive({ ...repo, pushedAt })).toBe(true);
+        expect(isActive({ ...repo, pushed_at: pushedAt })).toBe(true);
       });
     });
 
     test("Given repo was pushed_at more than 3 months ago then it should return false", () => {
       const pushedAt = subMonths(today, 4).toISOString();
 
-      expect(isActive({ ...repo, pushedAt })).toBe(false);
+      expect(isActive({ ...repo, pushed_at: pushedAt })).toBe(false);
     });
   });
 });
