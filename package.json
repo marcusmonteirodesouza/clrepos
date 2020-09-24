@@ -39,7 +39,7 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
-    "xo": "^0.26.1"
+    "xo": "^0.33.1"
   },
   "xo": {
     "prettier": true
